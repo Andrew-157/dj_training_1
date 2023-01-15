@@ -20,10 +20,12 @@
       <tbody>
         {% for movie in movies%}
         <tr>
-          <th>{{ movie.title }}</th>
-          <th>{{ movie.genre }}</th>
-          <th>{{ movie.number_in_stock }}</th>
-          <th>{{ movie.daily_rate }}</th>
+          <td>
+            <a href="{% url 'movies:detail' movie.id %}">{{ movie.title }}</a>
+          </td>
+          <td>{{ movie.genre }}</td>
+          <td>{{ movie.number_in_stock }}</td>
+          <td>{{ movie.daily_rate }}</td>
         </tr>
         {%endfor%}
       </tbody>
